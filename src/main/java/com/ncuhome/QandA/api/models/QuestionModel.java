@@ -41,7 +41,12 @@ public class QuestionModel {
 	
 	protected String getImage(String category) {
 		List<String> files = utils.listDir("static/bgimage/" + category, ".jpg");
-		return "static/bgimage/" + files.get(utils.randIntRanged(files.size()));
+		if(files.size() > 0) {
+			return "static/bgimage/" + files.get(utils.randIntRanged(files.size()));
+		}
+		else {
+			return "static/bgimage/default.jpg";
+		}
 	}
 	
 	public static List<String> getAllCategories() throws SQLException {
