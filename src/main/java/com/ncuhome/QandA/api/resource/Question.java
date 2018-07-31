@@ -15,7 +15,7 @@ import com.ncuhome.QandA.api.utils;
 @RequestMapping("/api")
 public class Question {
 	
-	public static int QUESTION_AMOUNT = 4;
+	public static final int QUESTION_AMOUNT = 4;
 	
 	@PostMapping("/v3/rand_question")
 	public Map<String, QuestionModel> rand_question(@RequestBody QuestionRequestModel request) throws SQLException {
