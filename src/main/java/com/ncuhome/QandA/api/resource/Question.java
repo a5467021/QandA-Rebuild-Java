@@ -27,6 +27,9 @@ public class Question {
 		else {
 			categories = QuestionModel.getAllCategories();
 		}
+		if(categories.size() == 0) {
+			categories = QuestionModel.getAllCategories();
+		}
 		while(categories.size() < QUESTION_AMOUNT) {
 			categories.add(categories.get(utils.randIntRanged(categories.size())));
 		}
